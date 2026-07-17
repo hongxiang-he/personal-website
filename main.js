@@ -21,7 +21,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 // Stagger: 为容器内子元素依次设置延迟
-document.querySelectorAll('.info-grid, .exp-grid, .ai-stack, .ai-workflow, .vault-domains, .topic-steps, .method-steps, .hero-content, .contact-info, .kn-sources-grid').forEach(parent => {
+document.querySelectorAll('.info-grid, .exp-grid, .work-grid, .ai-stack, .ai-workflow, .vault-domains, .topic-steps, .method-steps, .hero-content, .contact-info, .kn-sources-grid').forEach(parent => {
   parent.querySelectorAll('.reveal').forEach((el, i) => {
     el.style.transitionDelay = `${i * 90}ms`;
   });
