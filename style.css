@@ -2221,6 +2221,21 @@ a { color: inherit; }
 .why-table-header .why-col--me {
   background: rgba(56,189,248,0.15);
 }
+.why-table {
+  background: rgba(5, 10, 20, 0.88);
+  border-color: rgba(148,163,184,0.30);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.28);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+.why-table-row {
+  background: rgba(13,21,37,0.78);
+  border-top-color: rgba(148,163,184,0.18);
+}
+.why-table-row:hover { background: rgba(56,189,248,0.10); }
+.why-table .why-col--label { color: #94A3B8; }
+.why-table .why-col--other,
+.why-table-header .why-col--other { color: #CBD5E1; }
 
 /* ── 11. 装饰字 + 对角线全部隐藏 ── */
 .about::before, .skills::before, .ai-power::before,
