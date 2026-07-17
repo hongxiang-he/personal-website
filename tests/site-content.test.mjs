@@ -87,3 +87,16 @@ test('images have alt text and the mobile menu exposes its state', () => {
 test('contact values and the resume button remain readable on the dark theme', () => {
   assert.match(css, /\.contact\s+\.contact-value\s*,\s*\.contact\s+\.btn-download\s*\{\s*color:\s*#F1F5F9\s*;\s*\}/)
 })
+
+test('about copy reflects the approved account-growth wording and Shanghai location', () => {
+  assert.match(html, /深度参与了两个垂类账号的内容增长与爆款迭代/)
+  assert.doesNotMatch(html, /从零做到数十万粉/)
+  assert.match(html, /<div class="info-label">所在地<\/div>\s*<div class="info-value">上海<\/div>/)
+  assert.doesNotMatch(html, /<div class="info-value">杭州<\/div>/)
+})
+
+test('why-me comparison table uses a dark panel and readable neutral columns', () => {
+  assert.match(css, /\.why-table\s*\{[^}]*background:\s*rgba\(5,\s*10,\s*20,\s*0\.88\)/s)
+  assert.match(css, /\.why-table\s+\.why-col--label\s*\{\s*color:\s*#94A3B8\s*;\s*\}/)
+  assert.match(css, /\.why-table\s+\.why-col--other\s*,\s*\.why-table-header\s+\.why-col--other\s*\{\s*color:\s*#CBD5E1\s*;\s*\}/)
+})
