@@ -8,6 +8,7 @@ import { fileURLToPath } from 'node:url'
 const testDir = dirname(fileURLToPath(import.meta.url))
 const root = resolve(testDir, '..')
 const html = readFileSync(join(root, 'index.html'), 'utf8')
+const css = readFileSync(join(root, 'style.css'), 'utf8')
 const progress = readFileSync(join(root, '进度记录.md'), 'utf8')
 const expectedResumeHash = 'AC13A4C3EFA9C4A263C20933E48E86290D694DAC31C14A949CD67E0A019DE6B9'
 
@@ -81,4 +82,8 @@ test('images have alt text and the mobile menu exposes its state', () => {
   }
 
   assert.match(html, /id="nav-hamburger"[^>]*aria-expanded="false"/)
+})
+
+test('contact values and the resume button remain readable on the dark theme', () => {
+  assert.match(css, /\.contact\s+\.contact-value\s*,\s*\.contact\s+\.btn-download\s*\{\s*color:\s*#F1F5F9\s*;\s*\}/)
 })
